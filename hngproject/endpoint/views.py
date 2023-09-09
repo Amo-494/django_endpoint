@@ -4,8 +4,12 @@ import pytz
 
 def get_info(request):
     # Retrieve query parameters from the request
-    slack_name = request.GET.get('slack_name')
+    slack_name = request.GET.get("slack_name")
     track = request.GET.get('track')
+
+    # Print the variable names and values for debugging
+    print("slack_name:", slack_name)
+    print("track:", track)
 
     # Check if required parameters are provided
     if not slack_name or not track:
@@ -20,7 +24,7 @@ def get_info(request):
 
     # Replace these hardcoded values with your actual GitHub repository URLs
     github_repo_url = "https://github.com/Amo-494/django_endpoint"
-    github_file_url = f"{github_repo_url}/blob/main/hngproject"
+    github_file_url = f"{github_repo_url}/blob/main/hngproject/endpoint/views.py"
 
     # Construct the JSON response
     response = {
